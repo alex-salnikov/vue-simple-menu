@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+References
+- https://github.com/kafkadev/vue-without-webpack/blob/master/docs/index.html
+- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js'></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    <!--
+        <script src="https://raw.githubusercontent.com/alex-salnikov/http-vue-loader/master/src/httpVueLoader.js"></script>
+    -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.3/vue-router.min.js'></script>
+</head>
+<body>
+    <div id="app">
+
+        <!-- Top Navigation Menu -->
+        <div class="topnav">
+            <a href="#home" class="active">Logo</a>
+            <div id="myLinks">
+                <router-link :to="{ name: 'home' }">Home</router-link>
+                <router-link :to="{ name: 'page1' }">Page1</router-link>
+                <!--
+                <router-link :to="{ name: 'user', params: { userId: 123 } }">User 123</router-link>
+                <router-link :to="{ name: 'user', params: { userId: 456, userData: { age: 39, name: 'Patrick'} } }">User 456</router-link>
+                <router-link :to="{ name: 'named'}">Named Views Demo</router-link>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                -->
+            </div>
+            <a href="javascript:void(0);" class="icon" @click="menuToggle()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div style="padding-left:16px">
+            <router-view></router-view>
+        </div>
+
+        <script src="index.js"></script>
+
+    </div>
+</body>
+</html>
